@@ -1,5 +1,5 @@
 {-
-    PairingHeap.hs, Binomial Heap in Haskell
+    PairingHeap.hs, Pairing Heap in Haskell
     Copyright (C) 2011, Liu Xinyu (liuxinyu95@gmail.com)
 
     This program is free software: you can redistribute it and/or modify
@@ -32,7 +32,7 @@ data PHeap a = E | Node a [PHeap a] deriving (Eq, Show)
 merge :: (Ord a) => PHeap a -> PHeap a -> PHeap a
 merge h E = h
 merge E h = h
-merge h1@(Node x hs1) h2@(Node y hs2) = 
+merge h1@(Node x hs1) h2@(Node y hs2) =
     if x < y then Node x (h2:hs1) else Node y (h1:hs2)
 
 -- Insert, O(1) time
